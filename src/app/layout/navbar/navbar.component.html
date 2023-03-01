@@ -1,0 +1,28 @@
+<header>
+  <div class="header">
+    <div class="logo">
+      <img
+        src="../../../assets/file.png"
+        alt="illustration of a resume folder"
+      />
+    </div>
+    <div
+      class="header__icon-nav-responsive"
+      [class.iconMenuResponsive]="iconMenuResponsive"
+      (click)="openMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav
+      class="header__nav"
+      [class.animationItensMenuResponsive]="animationItensMenuResponsive"
+    >
+      <ul>
+        <li><a routerLink="/form">Cadastro Agora</a></li>
+        <li><a routerLink="/resume-list">Currículos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
