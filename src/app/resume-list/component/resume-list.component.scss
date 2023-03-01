@@ -1,0 +1,121 @@
+$background-and-font-color: #fff;
+$background-btn-delete-empty: #578bf2;
+$background-btn-download: #021e73;
+$details-text: #3049d9;
+$font-color: #0e1f40;
+
+.resume-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.curriculum-resume {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-and-font-color;
+  border-radius: 10px;
+  .btn-delete {
+    background-color: $background-btn-delete-empty;
+    transition: 0.3s ease-in-out;
+    margin: 10px 20px;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+  .btn-download {
+    background-color: $background-btn-download;
+    transition: 0.3s ease-in-out;
+    color: $background-and-font-color;
+    margin: 10px 20px;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.resume {
+  .resume-info {
+    &__title {
+      border-bottom: solid 1px $details-text;
+      color: $details-text;
+      padding-bottom: 10px;
+      margin: 20px 10px;
+      width: 95%;
+      font-size: 24px;
+      font-weight: lighter;
+    }
+    &__h3 {
+      color: $font-color;
+      font-size: 20px;
+      margin: 10px;
+      text-transform: capitalize;
+      h3 {
+        font-weight: bolder;
+      }
+    }
+    &__h4 {
+      color: $font-color;
+      font-size: 18px;
+      margin: 10px;
+      h4 {
+        font-weight: lighter;
+      }
+    }
+    &__p {
+      text-align: justify;
+      margin: 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+.resume-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 10px;
+  .btn-empty {
+    background-color: $background-btn-delete-empty;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.container-not-found {
+  background-color: $background-and-font-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  &__img {
+    width: 150px;
+    margin: 20px 0;
+  }
+  &__title {
+    margin: 20px 0;
+    text-align: center;
+    h2 {
+      font-size: 16px;
+    }
+  }
+  .btn-not-found {
+    background-color: $background-btn-download;
+    color: $background-and-font-color;
+    margin: 20px 0;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+}

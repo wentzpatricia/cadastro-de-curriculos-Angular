@@ -1,0 +1,51 @@
+<div class="resume-container" *ngIf="curriculum.length != 0">
+  <div
+    class="curriculum-resume"
+    *ngFor="let item of curriculum; let index = index"
+  >
+    <div class="resume" id="htmlData" #htmlData>
+      <div class="resume-info">
+        <h2 class="resume-info__title">Informações Pessoais</h2>
+        <h3 class="resume-info__h3">
+          {{ item.firstname }} {{ item.lastname }}
+        </h3>
+        <h4 class="resume-info__h4">CPF: {{ item.cpf }}</h4>
+        <h4 class="resume-info__h4">Nascimento: {{ item.birthDate }}</h4>
+        <h4 class="resume-info__h4">Sexo: {{ item.sex }}</h4>
+      </div>
+      <div class="resume-info">
+        <h2 class="resume-info__title">Informações para contato</h2>
+        <h4 class="resume-info__h4">Telefone: {{ item.telephone }}</h4>
+        <h4 class="resume-info__h4">Email: {{ item.email }}</h4>
+      </div>
+      <div class="resume-info">
+        <h2 class="resume-info__title">Experiências Profissionais</h2>
+        <p class="resume-info__p">{{ item.experience }}</p>
+      </div>
+    </div>
+
+    <button class="btn btn-delete" (click)="removeCurriculum(item.cpf)">
+      Deletar
+    </button>
+    <button class="btn btn-download" (click)="makePDF(index)">Download</button>
+  </div>
+  <div class="resume-btn">
+    <button class="btn btn-empty" (click)="emptyCurriculumList()">
+      Limpar lista de curriculos
+    </button>
+  </div>
+</div>
+
+<div class="container-not-found" *ngIf="!curriculum.length">
+  <img
+    class="container-not-found__img"
+    src="../../../assets/sad.png"
+    alt="ilustration of a sad face"
+  />
+  <h2 class="container-not-found__title">
+    Sem currículos cadastrados até o momento
+  </h2>
+  <button routerLink="/form" class="btn btn-not-found">
+    Cadastre o seu agora
+  </button>
+</div>
