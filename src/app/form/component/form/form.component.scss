@@ -1,0 +1,45 @@
+$background-and-font-color: #fff;
+$background-and-border-color: #0e1f40;
+$font-color: #0d0d0d;
+.form {
+  display: flex;
+  justify-content: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  color: $font-color;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: $background-and-font-color;
+  margin: 10px;
+  label,
+  input,
+  select,
+  textarea,
+  button {
+    margin-top: 10px;
+  }
+}
+
+.btn-form {
+  display: flex;
+  justify-content: space-evenly;
+  .btn-submit {
+    transition: 0.3s ease-in-out;
+    background-color: $background-and-border-color;
+    color: $background-and-font-color;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+  .btn-reset {
+    border-color: $background-and-border-color;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+}

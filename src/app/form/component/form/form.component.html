@@ -1,0 +1,122 @@
+<div class="form">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" [ngClass]="aplyCssError('firstname')">
+      <div>
+        <label for="firstname" class="form-label">Nome</label>
+        <input class="form-control" type="text" formControlName="firstname" />
+        <app-campo-control-erro
+          [control]="registerForm.get('firstname')"
+          label="Nome"
+        >
+        </app-campo-control-erro>
+      </div>
+
+      <div>
+        <label for="lastname" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" formControlName="lastname" />
+        <app-campo-control-erro
+          [control]="registerForm.get('lastname')"
+          label="Sobrenome"
+        >
+        </app-campo-control-erro>
+      </div>
+
+      <div>
+        <label for="cpf" class="control-label">CPF</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="cpf"
+          mask="000.000.000-00"
+        />
+        <app-campo-control-erro [control]="registerForm.get('cpf')" label="CPF">
+        </app-campo-control-erro>
+      </div>
+
+      <div>
+        <label for="birthDate" class="control-label">Nascimento</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="birthDate"
+          mask="00/00/0000"
+          placeholder="27/12/1994"
+        />
+        <app-campo-control-erro
+          [control]="registerForm.get('birthDate')"
+          label="Nascimento"
+        >
+        </app-campo-control-erro>
+      </div>
+
+      <div>
+        <label for="email" class="control-label">E-mail</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="email"
+          placeholder="nome@email.com"
+        />
+        <app-campo-control-erro
+          [control]="registerForm.get('email')"
+          label="E-mail"
+        >
+        </app-campo-control-erro>
+      </div>
+
+      <div>
+        <label for="telephone" class="control-label"
+          >Telefone para Contato
+        </label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="telephone"
+          prefix="+55"
+          mask="(00) 00000-0000"
+          [showMaskTyped]="true"
+        />
+        <app-campo-control-erro
+          [control]="registerForm.get('telephone')"
+          label="Telefone para Contato"
+        >
+        </app-campo-control-erro>
+      </div>
+
+      <div>
+        <label for="sex" class="control-label">Sexo </label>
+        <select id="sex" formControlName="sex" class="form-select">
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="other">Prefiro não informar</option>
+        </select>
+      </div>
+
+      <div>
+        <textarea
+          class="form-control"
+          rows="4"
+          cols="50"
+          formControlName="experience"
+          placeholder="Fale um pouco sobre suas experiências profissionais"
+        ></textarea>
+        <app-campo-control-erro
+          [control]="registerForm.get('experience')"
+          label="Experiências profissionais"
+        >
+        </app-campo-control-erro>
+      </div>
+
+      <div class="btn-form">
+        <button
+          class="btn btn-submit"
+          type="submit"
+          [disabled]="!registerForm.valid"
+        >
+          Cadastrar
+        </button>
+        <button class="btn btn-reset" (click)="resetForm()">Limpar</button>
+      </div>
+    </div>
+  </form>
+</div>
